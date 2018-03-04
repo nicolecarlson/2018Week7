@@ -2,9 +2,7 @@
 title: "HW4"
 author: "Nicole Carlson"
 date: "3/3/2018"
-output:
-  word_document: default
-  html_document: default
+output: html_document
 ---
 
 ```{r setup chunk 0, include=FALSE}
@@ -68,12 +66,6 @@ paste(x, y, z, collapse = NULL)
 
 Extra credit: What is the difference if you use the `paste0` function instead of the `paste` function above?
 
-To answer that question, I tried using both:
-```{r}
-paste0(x, y, z, collapse = NULL)
-```
-Looks like paste0 takes out the space between each input when it concatenates the strings.
-
 ####Problem 2.
 
 Suppose that you now have 4 lines of text as follows:
@@ -90,12 +82,10 @@ Z <- "And the dish ran away with the spoon."
 Write the R code below to merge these 3 strings.
 
 ####Answer to Problem 2.
-I also added some code here to change to lowercase all letters following a comma.  Don't be too impressed--a computer programmer helped me with this.  The exercise prompted a fascinating conversation about regular expressions.
+
 ```{r Answer 2}
 
-cow <- paste(W, X, Y, Z, collapse = NULL)
-pattern <- ', (.)'
-gsub (pattern, ', \\L\\1', cow, perl=TRUE)
+#Insert the code to answer the problem here.
 
 ```
 
@@ -107,8 +97,8 @@ Suppose we want to concatenate the 3 strings we did above, but also NA. We can d
 
 ```{r Intro 3}
 
-paste(X, Y, Z, "NA", collapse = NULL)
-str_c(X, Y, Z, "NA", collapse = NULL)
+paste(X, Y, Z, NA, collapse = NULL)
+str_c(X, Y, Z, NA, collapse = NULL)
 
 ```
 
@@ -130,9 +120,8 @@ Z <- "And the dish ran away with the spoon."
 ####Answer to Problem 3.
 
 ```{r Answer 3}
-paste(W, X, Y, Z, "NA", collapse = NULL)
-str_c(W, X, Y, Z, "NA", collapse = NULL)
 
+#Insert the code to answer the problem here.
 
 ```
 
@@ -146,20 +135,26 @@ myName <- "Vicki Hertzberg"
 Length <- str_length(myName)
 last5letters <- str_sub(myName, Length-4, Length)
 last5letters
+
 ```
 
 ####Problem 4. 
 Suppose Melinda Higgins wants to extract the last *6* letters of her name.
-Write the code below to extract the last 6 letters of her name.
-
-####Answer to Problem 4.
 
 ```{r Problem 4}
 
 herName <- "Melinda Higgins"
-Length <- str_length(myName)
-last6letters <- str_sub(herName, Length-5, Length)
-last6letters
+
+```
+
+Write the code below to extract the last 6 letters of her name.
+
+####Answer to Problem 4.
+
+```{r Answer 4}
+
+#Insert the code to answer the problem here.
+
 ```
 
 ###Section 5
@@ -193,8 +188,9 @@ Split this new string into separate words:
 ####Answer to Problem 5.
 
 ```{r Answer 5}
-myNewSeparatedString <- str_split(myNewString, "_")
-myNewSeparatedString
+
+#Insert the code to answer the problem here.
+
 ```
 
 
@@ -226,8 +222,7 @@ Split off the first word but leave the rest intact.
 
 ```{r Answer 6}
 
-myNewSplitSpring2 <- str_split(myNewString, "_", n=2)
-myNewSplitSpring2
+#Insert the code to answer the problem here.
 
 ```
 
@@ -255,7 +250,7 @@ Use the `stri_count_words` function as above to count the number of distinct wor
 
 ```{r Answer 7}
 
-stri_count_words(yourNewString)
+#Insert the code to answer the problem here.
 
 ```
 
@@ -282,7 +277,7 @@ nurses <-c("Nightingale", "Barton", "Dix", "Sanger", "Barton", "Woodruff", "Linc
 
 ```{r Answer 8}
 
-nurses[stri_duplicated(nurses)]
+#Insert your code to address the problem here
 
 ```
 
@@ -312,7 +307,7 @@ How can we form the string `0_1-2_3-4_5-6_7-8_9-'?
 
 ```{r Answer 9}
 
-stri_join(DIGITS, separators = c("_","-"), collapse = "")
+#Insert the code to solve the problem here.
 
 ```
 
@@ -334,8 +329,7 @@ Using the original pun, replace `his` with `her` and ` he ` with ` she `:
 
 ```{r Problem 10}
 
-punModified2 <- stri_replace_all_fixed(pun, c("his", "he"), c("her", "she"), vectorize_all = FALSE)
-punModified2
+pun
 
 ```
 
@@ -343,12 +337,10 @@ punModified2
 
 Note that the word `head` also starts with `he` but we don't want to substitute `she` into there.
 
-This was a hard question.  I found this [link](http://www.endmemo.com/program/R/gsub.php) about gsub package that had a table of Regular Expression Syntax to use when instructing R to operate among strings. I used the syntax for 'space', \\s, in the operation below. It took care of the 'shed' output from before, but I cannot get R to recognize 'he' in the string for substitution to 'she'. 
-
 ```{r Answer 10}
 
-punModified2 <- stri_replace_all_fixed(pun, c("his", "\\s\\he"), c("her", "she"), vectorize_all = FALSE)
-punModified2
+#Insert the code to answer the problem here.
 
 ```
+
 The github repository for this homework can be found [here](https://github.com/nicolecarlson/2018Week7)
